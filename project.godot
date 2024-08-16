@@ -11,8 +11,15 @@ config_version=5
 [application]
 
 config/name="Shadowrock Shooter"
+run/main_scene="res://Scenes/main.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=820
+window/size/viewport_height=1180
+window/stretch/aspect="keep_height"
 
 [rendering]
 
