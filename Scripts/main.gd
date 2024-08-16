@@ -19,9 +19,26 @@ func _process(delta):
 	pass
 
 func _on_spawn_timer_timeout():
+	
 	var asteroid: RigidBody2D = asteroid_scene.instantiate()
-	asteroid.position = Vector2(100, 100)
+	
+	asteroid.position = Vector2(generate_random_position(0, screen_size.x),
+								generate_random_position(0, screen_size.y))
 	
 	$Spawner.add_child(asteroid)
 	
-	asteroid.add_constant_force(Vector2(10, 2), Vector2(50, 20))
+	asteroid.add_constant_force(
+		Vector2(
+			generate_random_force(0, 20), 
+			generate_random_force(0, 20)), 
+		Vector2(
+			generate_random_force(0, 50), 
+			generate_random_force(0, 50))
+		)
+
+func generate_random_position(min: int, max: int):
+	return rng.randi_range(min, max)
+
+func generate_random_force(min: float, max: float):
+	return rng.randf_range(min, max)
+	
