@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=4 uid="uid://dcsmf7ybc3cno"]
+[gd_scene load_steps=4 format=4 uid="uid://dcsmf7ybc3cno"]
 
 [ext_resource type="TileSet" uid="uid://c68xgs5vmfmvm" path="res://Assets/background.tres" id="1_g70fp"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_r0aqu"]
 [ext_resource type="PackedScene" uid="uid://c2jkm7ecrnm2p" path="res://Scenes/player.tscn" id="2_2gdo3"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node2D"]
+script = ExtResource("1_r0aqu")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.381703, 0.381703, 0.381703, 1)
