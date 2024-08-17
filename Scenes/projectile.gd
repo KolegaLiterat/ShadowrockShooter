@@ -11,4 +11,7 @@ func _ready():
 func _process(delta):
 	# Move the projectile forward
 	position += transform.y * speed * delta * -1
-	
+
+func _on_body_entered(body: Node2D):
+	if body.is_in_group("asteroid"):
+		queue_free()

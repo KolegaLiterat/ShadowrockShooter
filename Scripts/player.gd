@@ -23,6 +23,9 @@ func _physics_process(delta):
 	# Move the character
 	move_and_slide()
 	clamp_position()
+	
+	if get_slide_collision_count() > 0:
+		print("You're DEAD!")
 
 func clamp_position():
 	# Get the current position of the character
@@ -44,10 +47,6 @@ func shoot():
 	
 	# Set the projectile's position to the player's position
 	projectile.position = global_position + offset.rotated(rotation)
-	
-	print(projectile.position)
-	
-	print(global_position)
 	
 	# Set the projectile's rotation to match the player's rotation
 	projectile.rotation = rotation
