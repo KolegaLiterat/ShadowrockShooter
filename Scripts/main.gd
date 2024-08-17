@@ -29,11 +29,11 @@ func _on_spawn_timer_timeout():
 	
 	asteroid.add_constant_force(
 		Vector2(
-			generate_random_force(0, 20), 
-			generate_random_force(0, 20)), 
+			generate_random_force(-20, 20), 
+			generate_random_force(-20, 20)), 
 		Vector2(
-			generate_random_force(0, 50), 
-			generate_random_force(0, 50))
+			generate_random_force(-50, 50), 
+			generate_random_force(-50, 50))
 		)
 
 func generate_random_position(min: int, max: int):
