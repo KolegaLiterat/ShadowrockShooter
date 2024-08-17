@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends RigidBody2D
 
 @export var speed = 600  # Speed of the projectile
 @export var lifetime = 2.0  # Time before the projectile is removed
@@ -11,3 +11,4 @@ func _ready():
 func _process(delta):
 	# Move the projectile forward
 	position += transform.y * speed * delta * -1
+	
