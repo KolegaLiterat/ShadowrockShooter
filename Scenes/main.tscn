@@ -8,6 +8,7 @@
 script = ExtResource("1_r0aqu")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.0142752, 0.0142752, 0.0142752, 1)
 
 [node name="Background" type="TileMapLayer" parent="CanvasModulate"]
