@@ -12,8 +12,6 @@ var time_since_last_shot = 0
 func _process(delta):
 	time_since_last_shot += delta
 	
-	print(time_since_last_shot)
-	
 	if Input.is_action_just_pressed("shoot") and time_since_last_shot >= shoot_cooldown:  # Ensure you have defined "shoot" in the Input Map
 		shoot()
 		time_since_last_shot = 0.0 

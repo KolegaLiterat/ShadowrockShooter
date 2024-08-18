@@ -29,7 +29,7 @@ func _on_asteroid_spawner_timer_timeout():
 	asteroid.position = Vector2(generate_random_position(0, screen_size.x),
 								generate_random_position(0, screen_size.y))
 	
-	if (asteroid.position - $Player.position).length() > 20:
+	if (asteroid.position - $Player.position).length() > 40:
 		$AsteroidSpawner.add_child(asteroid)
 		asteroid.name = "Asteroid"
 		

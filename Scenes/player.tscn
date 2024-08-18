@@ -25,7 +25,7 @@ texture = ExtResource("2_51bqx")
 energy = 10.0
 blend_mode = 2
 texture = ExtResource("1_uk5m8")
-texture_scale = 3.0
+texture_scale = 3.5
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_o3r5t")

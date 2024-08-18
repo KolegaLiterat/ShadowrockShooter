@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+var can_be_aquired = false
+
 @onready var screen_size = get_viewport().get_visible_rect().size
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,8 +23,11 @@ func _physics_process(delta):
 
 func _on_body_entered(body: Node2D):
 	if body.is_in_group("Player"):
-		Globals.Score += 1
-		$"Gold Catch".play()
+		
+		if can_be_aquired == false:
+			Globals.Score += 1
+			$"Gold Catch".play()
+		
 		visible = false
 		$Collision.disabled = true
 		
