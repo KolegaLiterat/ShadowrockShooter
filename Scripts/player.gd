@@ -31,7 +31,7 @@ func _physics_process(delta):
 	clamp_position()
 	
 	if get_slide_collision_count() > 0:
-		print("You're DEAD!")
+		Globals.IsPlayerAlive = false
 
 func clamp_position():
 	# Get the current position of the character

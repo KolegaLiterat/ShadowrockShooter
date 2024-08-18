@@ -22,6 +22,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$"UI Layer/UI/Points".text = str(Globals.Score)
+	if Globals.IsPlayerAlive == false:
+		print("Done!")
 
 func _on_asteroid_spawner_timer_timeout():
 	var asteroid: RigidBody2D = asteroid_scene.instantiate()
@@ -29,7 +31,7 @@ func _on_asteroid_spawner_timer_timeout():
 	asteroid.position = Vector2(generate_random_position(0, screen_size.x),
 								generate_random_position(0, screen_size.y))
 	
-	if (asteroid.position - $Player.position).length() > 40:
+	if (asteroid.position - $Player.position).length() > 60:
 		$AsteroidSpawner.add_child(asteroid)
 		asteroid.name = "Asteroid"
 		
@@ -44,7 +46,7 @@ func _on_asteroid_spawner_timer_timeout():
 		
 		$AsteroidSpawner/AsteroidSpawnerTimer.wait_time = rng.randf_range(0.2, 2.0)
 		$AsteroidSpawner/AsteroidSpawnerTimer.start()
-	else :
+	else:
 		$AsteroidSpawner/AsteroidSpawnerTimer.wait_time = 0.2
 		$AsteroidSpawner/AsteroidSpawnerTimer.start()
 

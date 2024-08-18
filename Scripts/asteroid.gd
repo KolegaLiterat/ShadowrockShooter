@@ -23,5 +23,5 @@ func _on_body_entered(body):
 		$Rock.visible = false
 		freeze = true
 			
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.05).timeout
 		queue_free()
