@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://4jqf4snlueoj"]
+[gd_scene load_steps=6 format=3 uid="uid://4jqf4snlueoj"]
 
 [ext_resource type="Texture2D" uid="uid://dlvj7c0ijjjy0" path="res://Assets/PNG/Effects/shield3.png" id="1_5i4wx"]
 [ext_resource type="Texture2D" uid="uid://drue66ef7yy0k" path="res://Assets/PNG/Power-ups/things_gold.png" id="1_141kx"]
 [ext_resource type="Script" path="res://Scripts/gold.gd" id="1_fn7kb"]
+[ext_resource type="AudioStream" uid="uid://donldiktv2whk" path="res://Assets/Bonus/sfx_zap.ogg" id="4_evyhg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_unte8"]
 size = Vector2(32, 32)
@@ -27,4 +28,8 @@ energy = 3.0
 texture = ExtResource("1_5i4wx")
 texture_scale = 0.5
 
+[node name="Gold Catch" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_evyhg")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="Gold Catch" to="." method="_on_gold_catch_finished"]
