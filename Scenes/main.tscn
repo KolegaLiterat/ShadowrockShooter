@@ -21,8 +21,13 @@ z_index = 1
 position = Vector2(224, 208)
 scale = Vector2(0.75, 0.75)
 
+[node name="GoldSpawner" type="Node2D" parent="."]
+
+[node name="SpawnTimer" type="Timer" parent="GoldSpawner"]
+
 [node name="AsteroidSpawner" type="Node2D" parent="."]
 
-[node name="SpawnTimer" type="Timer" parent="AsteroidSpawner"]
+[node name="AsteroidSpawnerTimer" type="Timer" parent="AsteroidSpawner"]
 
-[connection signal="timeout" from="AsteroidSpawner/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="GoldSpawner/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="AsteroidSpawner/AsteroidSpawnerTimer" to="." method="_on_asteroid_spawner_timer_timeout"]
