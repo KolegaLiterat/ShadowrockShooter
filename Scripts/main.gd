@@ -1,10 +1,10 @@
 extends Node2D
 
 @onready var screen_size = get_viewport().get_visible_rect().size
-@onready var asteroid_scene = preload("res://Scenes/asteroid.tscn") 
 
 @export var spawn_time = 5.0  # Time in seconds before first spawn
 @export var force = 100.0  # Force applied to spawned object
+@export var asteroid_scene: PackedScene 
 
 var rng = RandomNumberGenerator.new()
 
