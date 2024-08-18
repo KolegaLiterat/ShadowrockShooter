@@ -42,10 +42,10 @@ func _on_asteroid_spawner_timer_timeout():
 				generate_random_force(-50, 50))
 			)
 		
-		$AsteroidSpawner/AsteroidSpawnerTimer.wait_time = rng.randf_range(0.5, 2.0)
+		$AsteroidSpawner/AsteroidSpawnerTimer.wait_time = rng.randf_range(0.2, 2.0)
 		$AsteroidSpawner/AsteroidSpawnerTimer.start()
 	else :
-		$AsteroidSpawner/AsteroidSpawnerTimer.wait_time = 0.5
+		$AsteroidSpawner/AsteroidSpawnerTimer.wait_time = 0.2
 		$AsteroidSpawner/AsteroidSpawnerTimer.start()
 
 func _on_gold_spawner_timer_timeout():
