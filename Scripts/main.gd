@@ -16,8 +16,8 @@ func _ready():
 	$AsteroidSpawner/AsteroidSpawnerTimer.wait_time = spawn_time
 	$AsteroidSpawner/AsteroidSpawnerTimer.start()
 	
-	$GoldSpawner/GoldSpawnerTimer.wait_time = gold_spawn_time
-	$GoldSpawner/GoldSpawnerTimer.start()
+	$GoldLayer/GoldSpawner/GoldSpawnerTimer.wait_time = gold_spawn_time
+	$GoldLayer/GoldSpawner/GoldSpawnerTimer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -55,7 +55,7 @@ func _on_gold_spawner_timer_timeout():
 								generate_random_position(0, screen_size.y))
 	
 	if (gold.position - $Player.position).length() > 50:
-		$GoldSpawner.add_child(gold)
+		$GoldLayer/GoldSpawner.add_child(gold)
 		gold.name = "Gold"
 
 func generate_random_position(min: int, max: int):
