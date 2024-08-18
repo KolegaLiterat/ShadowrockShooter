@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c7y7hpdk12bbs"]
 
 [ext_resource type="Texture2D" uid="uid://boke5pr7l123e" path="res://Assets/PNG/Meteors/meteorBrown_big1.png" id="1_ltwx3"]
-[ext_resource type="Script" path="res://Scenes/asteroid.gd" id="1_luj1h"]
+[ext_resource type="Script" path="res://Scripts/asteroid.gd" id="1_luj1h"]
 [ext_resource type="Texture2D" uid="uid://d4b44ihviaghx" path="res://Assets/PNG/Effects/star3.png" id="3_qhou1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55jmj"]

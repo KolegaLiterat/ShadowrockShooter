@@ -5,6 +5,7 @@ extends Node2D
 @export var spawn_time = 5.0  # Time in seconds before first spawn
 @export var force = 100.0  # Force applied to spawned object
 @export var asteroid_scene: PackedScene 
+@export var gold_scene: PackedScene
 
 var rng = RandomNumberGenerator.new()
 
