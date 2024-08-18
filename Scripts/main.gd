@@ -3,7 +3,7 @@ extends Node2D
 @onready var screen_size = get_viewport().get_visible_rect().size
 @onready var asteroid_scene = preload("res://Scenes/asteroid.tscn") 
 
-@export var spawn_time = 6.0  # Time in seconds before first spawn
+@export var spawn_time = 5.0  # Time in seconds before first spawn
 @export var force = 100.0  # Force applied to spawned object
 
 var rng = RandomNumberGenerator.new()
@@ -35,6 +35,9 @@ func _on_spawn_timer_timeout():
 			generate_random_force(-50, 50), 
 			generate_random_force(-50, 50))
 		)
+	
+	$Spawner/SpawnTimer.wait_time = rng.randf_range(3.0, 6.0)
+	$Spawner/SpawnTimer.start()
 
 func generate_random_position(min: int, max: int):
 	return rng.randi_range(min, max)

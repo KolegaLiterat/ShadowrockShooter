@@ -22,7 +22,6 @@ func _on_body_entered(body):
 		$"Light Star".visible = true
 		$Rock.visible = false
 		freeze = true
-		
-		
-		await get_tree().create_timer(5).timeout
+			
+		await get_tree().create_timer(0.2).timeout
 		queue_free()
