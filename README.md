@@ -11,4 +11,5 @@ To fly use **WSAD**. To shoot press **Space**
 ## Credits
 
 Programming and Desing - [Adrian "Literat" Jaworek](https://www.kolegaliterat.pl/adrian-jaworek-producent-portfolio/)
+
 Assets (sound, graphics, UI) - [Kenny](https://www.kenney.nl/).
