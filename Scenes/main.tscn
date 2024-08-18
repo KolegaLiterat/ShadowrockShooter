@@ -1,15 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://dcsmf7ybc3cno"]
+[gd_scene load_steps=7 format=4 uid="uid://dcsmf7ybc3cno"]
 
 [ext_resource type="TileSet" uid="uid://c68xgs5vmfmvm" path="res://Assets/background.tres" id="1_g70fp"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_r0aqu"]
 [ext_resource type="PackedScene" uid="uid://c2jkm7ecrnm2p" path="res://Scenes/player.tscn" id="2_2gdo3"]
 [ext_resource type="PackedScene" uid="uid://c7y7hpdk12bbs" path="res://Scenes/asteroid.tscn" id="2_3ep5g"]
 [ext_resource type="PackedScene" uid="uid://4jqf4snlueoj" path="res://Scenes/gold.tscn" id="3_6ot8n"]
-[ext_resource type="FontFile" uid="uid://p7dehtwv0f2e" path="res://Assets/Bonus/kenvector_future.ttf" id="4_wvgit"]
-
-[sub_resource type="Theme" id="Theme_tx5hk"]
-Label/font_sizes/font_size = 34
-Label/fonts/font = ExtResource("4_wvgit")
+[ext_resource type="Theme" uid="uid://bewarmo7qnayj" path="res://Assets/ui_theme.tres" id="4_l4wtp"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_r0aqu")
@@ -29,8 +25,16 @@ layout_mode = 0
 offset_left = 8.0
 offset_right = 223.0
 offset_bottom = 47.0
-theme = SubResource("Theme_tx5hk")
+theme = ExtResource("4_l4wtp")
 text = "Aquired Gold:"
+
+[node name="Points" type="Label" parent="UI Layer/UI"]
+layout_mode = 0
+offset_left = 344.0
+offset_right = 429.0
+offset_bottom = 40.0
+theme = ExtResource("4_l4wtp")
+text = "STR"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.0142752, 0.0142752, 0.0142752, 1)
