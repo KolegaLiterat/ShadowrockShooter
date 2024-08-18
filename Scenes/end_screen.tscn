@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://cqaa88pwm787u"]
+[gd_scene load_steps=6 format=4 uid="uid://cqaa88pwm787u"]
 
 [ext_resource type="Script" path="res://Scripts/end_screen.gd" id="1_dt1fk"]
 [ext_resource type="TileSet" uid="uid://c68xgs5vmfmvm" path="res://Assets/background.tres" id="1_t6yf3"]
 [ext_resource type="Theme" uid="uid://bewarmo7qnayj" path="res://Assets/ui_theme.tres" id="2_hn1vq"]
 [ext_resource type="Texture2D" uid="uid://drue66ef7yy0k" path="res://Assets/PNG/Power-ups/things_gold.png" id="3_u83br"]
+[ext_resource type="AudioStream" uid="uid://5txl5r6lg7p8" path="res://Assets/Bonus/sfx_lose.ogg" id="5_dsnkq"]
 
 [node name="EndScreen" type="Control"]
 layout_mode = 3
@@ -62,6 +63,9 @@ offset_right = 648.0
 offset_bottom = 616.0
 theme = ExtResource("2_hn1vq")
 text = "Restart"
+
+[node name="LoseSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_dsnkq")
 
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
