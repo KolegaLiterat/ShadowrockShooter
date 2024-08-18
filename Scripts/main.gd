@@ -3,7 +3,7 @@ extends Node2D
 @onready var screen_size = get_viewport().get_visible_rect().size
 
 @export var spawn_time = 5.0  # Time in seconds before first spawn
-@export var gold_spawn_time = 2.0
+@export var gold_spawn_time = 3.0
 @export var force = 100.0  # Force applied to spawned object
 @export var asteroid_scene: PackedScene 
 @export var gold_scene: PackedScene
