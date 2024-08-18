@@ -23,7 +23,7 @@ func _ready():
 func _process(delta):
 	$"UI Layer/UI/Points".text = str(Globals.Score)
 	if Globals.IsPlayerAlive == false:
-		print("Done!")
+		get_tree().change_scene_to_file("res://Scenes/end_screen.tscn")
 
 func _on_asteroid_spawner_timer_timeout():
 	var asteroid: RigidBody2D = asteroid_scene.instantiate()
