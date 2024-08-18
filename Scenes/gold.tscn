@@ -26,3 +26,5 @@ color = Color(0.850513, 0.848833, 3.85046e-07, 1)
 energy = 3.0
 texture = ExtResource("1_5i4wx")
 texture_scale = 0.5
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

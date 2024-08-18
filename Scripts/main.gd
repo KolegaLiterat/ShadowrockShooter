@@ -29,7 +29,7 @@ func _on_asteroid_spawner_timer_timeout():
 	asteroid.position = Vector2(generate_random_position(0, screen_size.x),
 								generate_random_position(0, screen_size.y))
 	
-	if (asteroid.position - $Player.position).length() > 50:
+	if (asteroid.position - $Player.position).length() > 20:
 		$AsteroidSpawner.add_child(asteroid)
 		asteroid.name = "Asteroid"
 		
@@ -42,10 +42,10 @@ func _on_asteroid_spawner_timer_timeout():
 				generate_random_force(-50, 50))
 			)
 		
-		$AsteroidSpawner/AsteroidSpawnerTimer.wait_time = rng.randf_range(3.0, 6.0)
+		$AsteroidSpawner/AsteroidSpawnerTimer.wait_time = rng.randf_range(0.5, 3.0)
 		$AsteroidSpawner/AsteroidSpawnerTimer.start()
 	else :
-		$AsteroidSpawner/AsteroidSpawnerTimer.wait_time = 1.0
+		$AsteroidSpawner/AsteroidSpawnerTimer.wait_time = 0.5
 		$AsteroidSpawner/AsteroidSpawnerTimer.start()
 
 func _on_gold_spawner_timer_timeout():
