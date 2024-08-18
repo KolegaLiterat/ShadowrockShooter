@@ -23,18 +23,18 @@ offset_right = 874.0
 offset_bottom = 640.0
 theme = ExtResource("3_osd31")
 theme_override_font_sizes/font_size = 28
-text = "INSTRUCTION
+text = "INSTRUCTIONS
 
-Use WSAD to fly, space to fire!
-Try to grab gold and avoid asteroides!
+Use WSAD to fly, and press space to fire!
+Try to grab gold and avoid asteroids!
 
-CREDITS:
+CREDITS
 
-Design and programming:
+Design and Programming:
 Adrian \"Literat\" Jaworek
 
-Graphics, UI and sound:
-KennyNL"
+Graphics, UI, and Sound:
+Kenny"
 horizontal_alignment = 1
 
 [node name="StartGame" type="Button" parent="."]
@@ -47,6 +47,7 @@ theme = ExtResource("3_osd31")
 text = "Start"
 
 [node name="Quit" type="Button" parent="."]
+layout_mode = 0
 offset_left = 176.0
 offset_top = 704.0
 offset_right = 640.0
