@@ -6,9 +6,17 @@ extends CharacterBody2D
 @export var rotation_speed = 1.5  # Rotation speed in radians/sec\
 @export var projectile_scene: PackedScene
 
+var shoot_cooldown = 0.5  # Cooldown duration in seconds
+var time_since_last_shot = 0
+
 func _process(delta):
-	if Input.is_action_just_pressed("shoot"):  # Ensure you have defined "shoot" in the Input Map
+	time_since_last_shot += delta
+	
+	print(time_since_last_shot)
+	
+	if Input.is_action_just_pressed("shoot") and time_since_last_shot >= shoot_cooldown:  # Ensure you have defined "shoot" in the Input Map
 		shoot()
+		time_since_last_shot = 0.0 
 
 func _physics_process(delta):
 	var move_input = Input.get_axis("up", "down")  # Get forward/backward input
@@ -44,6 +52,7 @@ func shoot():
 	# Instance the projectile scene
 	var projectile = projectile_scene.instantiate()
 	var offset = Vector2(0, -50)
+	$ShootSound.play()
 	
 	# Set the projectile's position to the player's position
 	projectile.position = global_position + offset.rotated(rotation)

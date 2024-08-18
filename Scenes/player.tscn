@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2jkm7ecrnm2p"]
+[gd_scene load_steps=7 format=3 uid="uid://c2jkm7ecrnm2p"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_d3h4n"]
 [ext_resource type="Texture2D" uid="uid://dlvj7c0ijjjy0" path="res://Assets/PNG/Effects/shield3.png" id="1_uk5m8"]
 [ext_resource type="PackedScene" uid="uid://88d3hp4327r6" path="res://Scenes/projectile.tscn" id="2_35dcr"]
 [ext_resource type="Texture2D" uid="uid://c7kbpnivek52" path="res://Assets/PNG/playerShip2_green.png" id="2_51bqx"]
+[ext_resource type="AudioStream" uid="uid://ekkst1vnv27i" path="res://Assets/Bonus/sfx_laser2.ogg" id="5_o3r5t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gfmgh"]
 radius = 40.7922
@@ -25,3 +26,6 @@ energy = 10.0
 blend_mode = 2
 texture = ExtResource("1_uk5m8")
 texture_scale = 3.0
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_o3r5t")
