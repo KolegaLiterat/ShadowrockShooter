@@ -11,8 +11,8 @@ var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Player.position = Vector2(screen_size.x * 0.5, screen_size.y * 0.5)
-	$Spawner/SpawnTimer.wait_time = spawn_time
-	$Spawner/SpawnTimer.start()
+	$AsteroidSpawner/SpawnTimer.wait_time = spawn_time
+	$AsteroidSpawner/SpawnTimer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -25,7 +25,8 @@ func _on_spawn_timer_timeout():
 	asteroid.position = Vector2(generate_random_position(0, screen_size.x),
 								generate_random_position(0, screen_size.y))
 	
-	$Spawner.add_child(asteroid)
+	$AsteroidSpawner.add_child(asteroid)
+	asteroid.name = "Asteroid"
 	
 	asteroid.add_constant_force(
 		Vector2(
@@ -36,8 +37,8 @@ func _on_spawn_timer_timeout():
 			generate_random_force(-50, 50))
 		)
 	
-	$Spawner/SpawnTimer.wait_time = rng.randf_range(3.0, 6.0)
-	$Spawner/SpawnTimer.start()
+	$AsteroidSpawner/SpawnTimer.wait_time = rng.randf_range(2.0, 6.0)
+	$AsteroidSpawner/SpawnTimer.start()
 
 func generate_random_position(min: int, max: int):
 	return rng.randi_range(min, max)
