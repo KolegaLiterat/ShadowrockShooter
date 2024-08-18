@@ -1,20 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://4jqf4snlueoj"]
+[gd_scene load_steps=5 format=3 uid="uid://4jqf4snlueoj"]
 
+[ext_resource type="Texture2D" uid="uid://dlvj7c0ijjjy0" path="res://Assets/PNG/Effects/shield3.png" id="1_5i4wx"]
 [ext_resource type="Texture2D" uid="uid://drue66ef7yy0k" path="res://Assets/PNG/Power-ups/things_gold.png" id="1_141kx"]
-[ext_resource type="Texture2D" uid="uid://cb88mjsapvm70" path="res://Assets/PNG/Effects/shield1.png" id="2_jmooe"]
+[ext_resource type="Script" path="res://Scripts/gold.gd" id="1_fn7kb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_unte8"]
 size = Vector2(32, 32)
 
 [node name="Gold" type="RigidBody2D"]
+collision_layer = 4
+mass = 0.001
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_fn7kb")
 
 [node name="GoldImage" type="Sprite2D" parent="."]
 texture = ExtResource("1_141kx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_unte8")
 
 [node name="Light" type="PointLight2D" parent="."]
+color = Color(0.850513, 0.848833, 3.85046e-07, 1)
 energy = 3.0
-texture = ExtResource("2_jmooe")
+texture = ExtResource("1_5i4wx")
 texture_scale = 0.5

@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=4 uid="uid://dcsmf7ybc3cno"]
+[gd_scene load_steps=6 format=4 uid="uid://dcsmf7ybc3cno"]
 
 [ext_resource type="TileSet" uid="uid://c68xgs5vmfmvm" path="res://Assets/background.tres" id="1_g70fp"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_r0aqu"]
 [ext_resource type="PackedScene" uid="uid://c2jkm7ecrnm2p" path="res://Scenes/player.tscn" id="2_2gdo3"]
 [ext_resource type="PackedScene" uid="uid://c7y7hpdk12bbs" path="res://Scenes/asteroid.tscn" id="2_3ep5g"]
+[ext_resource type="PackedScene" uid="uid://4jqf4snlueoj" path="res://Scenes/gold.tscn" id="3_6ot8n"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_r0aqu")
 asteroid_scene = ExtResource("2_3ep5g")
+gold_scene = ExtResource("3_6ot8n")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.0142752, 0.0142752, 0.0142752, 1)
@@ -25,11 +27,11 @@ scale = Vector2(0.75, 0.75)
 
 [node name="GoldSpawner" type="Node2D" parent="."]
 
-[node name="SpawnTimer" type="Timer" parent="GoldSpawner"]
+[node name="GoldSpawnerTimer" type="Timer" parent="GoldSpawner"]
 
 [node name="AsteroidSpawner" type="Node2D" parent="."]
 
 [node name="AsteroidSpawnerTimer" type="Timer" parent="AsteroidSpawner"]
 
-[connection signal="timeout" from="GoldSpawner/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="GoldSpawner/GoldSpawnerTimer" to="." method="_on_gold_spawner_timer_timeout"]
 [connection signal="timeout" from="AsteroidSpawner/AsteroidSpawnerTimer" to="." method="_on_asteroid_spawner_timer_timeout"]
